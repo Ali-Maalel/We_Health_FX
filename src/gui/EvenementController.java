@@ -5,6 +5,7 @@
  */
 package gui;
 
+import entities.CategorieEvenement;
 import entities.Evenement;
 import java.io.File;
 import java.net.URL;
@@ -23,6 +24,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -32,6 +34,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import services.CategorieEventService;
 import services.EvenementService;
 
 /**
@@ -98,13 +101,22 @@ public class EvenementController implements Initializable {
     private Label lblimgevent;
     @FXML
     private Label lblDateevent;
+    private ComboBox<CategorieEvenement> combocat;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        Refresh();
+        try {
+            CategorieEventService CS = new CategorieEventService(); 
+            ObservableList<CategorieEvenement> categorieObs = FXCollections.observableArrayList(CS.recuperer());
+            combocat.setItems(categorieObs);
+            
+            Refresh();
+        } catch (SQLException ex) {
+            Logger.getLogger(EvenementController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     private void Refresh() {
@@ -194,6 +206,8 @@ public class EvenementController implements Initializable {
                 p.setPrix(Integer.parseInt(tfprix.getText()));
                 p.setMax(Integer.parseInt(tfmax.getText()));
                 p.setReservations(0);
+                CategorieEvenement cat = combocat.getValue();
+                p.setCategorie(cat);
                 es.ajouter(p);
                 reset();
                 Refresh();

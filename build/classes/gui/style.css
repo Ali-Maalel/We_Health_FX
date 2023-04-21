@@ -1,0 +1,54 @@
+.login_button{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 30;
+}
+.vbox_login{
+    -fx-background-radius: 30;
+}
+.SHADOW{
+   -fx-effect: dropshadow(three-pass-box,rgba(0,0,0,0.1),10.0,0.0,0.0,10.0);
+}
+
+.login{
+    -fx-background-radius: 20;
+}
+.side_ancherpane{
+    -fx-background-color: #5271FF;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+      -fx-border-color: #5271FF;
+}
+.most_inner_pane{
+    -fx-background-color:#ffffff;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #ffffff;
+}
+.bouton{
+    -fx-background-color:#3357B0;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #6B7FDA;
+}
+
+.boutondown{
+    -fx-background-color:#5271FF;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #5271FF;
+}
+.boutondown:hover{
+    -fx-background-color:#ECEEF3;
+}
+.selected{
+    -fx-background-color: #ECEEF3;
+}
+

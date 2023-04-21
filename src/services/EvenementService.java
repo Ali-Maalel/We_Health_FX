@@ -30,7 +30,7 @@ public class EvenementService implements IServices<Evenement> {
 
     @Override
     public void ajouter(Evenement t) throws SQLException {
-        String req = "INSERT INTO evennement (titre,description,consultationurl,date_debut,date_fin,all_day,reservations,max,image,prix) VALUES(?,?,?,?,?,?,?,?,?,?)";
+        String req = "INSERT INTO evennement (titre,description,consultationurl,date_debut,date_fin,all_day,reservations,max,image,prix,categorie_evenement_id) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
         PreparedStatement ps = cnx.prepareStatement(req);
         ps.setString(1, t.getTitre());
         ps.setString(2, t.getDescription());
@@ -42,6 +42,7 @@ public class EvenementService implements IServices<Evenement> {
         ps.setInt(8, t.getMax());
         ps.setString(9, t.getImage());
         ps.setInt(10, t.getPrix());
+        ps.setInt(11, t.getCategorie().getId());
 
         ps.executeUpdate();
 
@@ -49,7 +50,7 @@ public class EvenementService implements IServices<Evenement> {
 
     @Override
     public void modifier(Evenement t) throws SQLException {
-        String req = "update evennement set titre = ?, description = ?, consultationurl = ?, date_debut = ?, date_fin = ?, all_day=?,max=?,image=?,prix=? where id = ?";
+        String req = "update evennement set titre = ?, description = ?, consultationurl = ?, date_debut = ?, date_fin = ?, all_day=?,max=?,image=?,prix=?,categorie_evenement_id=? where id = ?";
         PreparedStatement ps = cnx.prepareStatement(req);
         ps.setString(1, t.getTitre());
         ps.setString(2, t.getDescription());
@@ -61,6 +62,7 @@ public class EvenementService implements IServices<Evenement> {
         ps.setString(8, t.getImage());
         ps.setInt(9, t.getPrix());
         ps.setInt(10, t.getId());
+        ps.setInt(11, t.getCategorie().getId());
         ps.executeUpdate();
 
     }
