@@ -101,6 +101,7 @@ public class EvenementController implements Initializable {
     private Label lblimgevent;
     @FXML
     private Label lblDateevent;
+    @FXML
     private ComboBox<CategorieEvenement> combocat;
 
     /**
