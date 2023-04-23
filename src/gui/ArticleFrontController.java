@@ -14,7 +14,7 @@ import javafx.fxml.Initializable;
  *
  * @author sarra
  */
-public class AccueilController implements Initializable {
+public class ArticleFrontController implements Initializable {
 
     /**
      * Initializes the controller class.

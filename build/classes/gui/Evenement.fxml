@@ -31,10 +31,10 @@
                           </columns>
                         </TableView>
                         <TextField fx:id="tftitre" layoutX="339.0" layoutY="254.0" />
-                        <Label layoutX="220.0" layoutY="385.0" prefHeight="22.0" prefWidth="98.0" text="Date début" />
+                        <Label layoutX="220.0" layoutY="359.0" prefHeight="22.0" prefWidth="98.0" text="Date début" />
                         <Label layoutX="269.0" layoutY="258.0" prefHeight="22.0" prefWidth="41.0" text="Titre" />
                         <Label layoutX="233.0" layoutY="294.0" prefHeight="22.0" prefWidth="100.0" text="Description" />
-                        <Label layoutX="212.0" layoutY="339.0" prefHeight="22.0" prefWidth="114.0" text="Lien de consultation" />
+                        <Label layoutX="202.0" layoutY="329.0" prefHeight="22.0" prefWidth="114.0" text="Lien de consultation" />
                         <Label layoutX="504.0" layoutY="330.0" prefHeight="22.0" prefWidth="41.0" text="Image" />
                         <Button fx:id="btnimport" layoutX="603.0" layoutY="329.0" mnemonicParsing="false" onAction="#AjouterPhoto" prefHeight="25.0" prefWidth="148.0" text="Importer" />
                         <Button fx:id="btnajout" layoutX="26.0" layoutY="266.0" mnemonicParsing="false" onAction="#AjouterArticle" prefHeight="39.0" prefWidth="122.0" text="Ajouter" />
@@ -45,8 +45,8 @@
                         <TextField fx:id="tfliencons" layoutX="339.0" layoutY="339.0" />
                         <TextField fx:id="tfdesc" layoutX="339.0" layoutY="293.0" />
                         <TextField fx:id="tfprix" layoutX="602.0" layoutY="402.0" />
-                        <Label layoutX="220.0" layoutY="418.0" prefHeight="22.0" prefWidth="98.0" text="Date fin" />
-                        <Label layoutX="504.0" layoutY="295.0" prefHeight="22.0" prefWidth="98.0" text="Max participant" />
+                        <Label layoutX="220.0" layoutY="404.0" prefHeight="22.0" prefWidth="98.0" text="Date fin" />
+                        <Label layoutX="495.0" layoutY="295.0" prefHeight="22.0" prefWidth="98.0" text="Max participant" />
                         <Label layoutX="524.0" layoutY="404.0" prefHeight="22.0" prefWidth="41.0" text="Prix" />
                         <DatePicker fx:id="datedebut" layoutX="339.0" layoutY="383.0" prefHeight="25.0" prefWidth="150.0" />
                         <DatePicker fx:id="datefin" layoutX="339.0" layoutY="416.0" prefHeight="25.0" prefWidth="151.0" />
@@ -57,8 +57,8 @@
                         <Label fx:id="lblidevent" layoutX="663.0" layoutY="258.0" visible="false" />
                         <Label fx:id="lblimgevent" layoutX="835.0" layoutY="333.0" visible="false" />
                         <Label fx:id="lblDateevent" layoutX="231.0" layoutY="433.0" />
-                        <Label layoutX="504.0" layoutY="261.0" text="categorie" />
                         <ComboBox fx:id="combocat" layoutX="602.0" layoutY="254.0" prefWidth="150.0" />
+                        <Label layoutX="495.0" layoutY="258.0" text="Catégorie" />
                      </children>
                   </AnchorPane>
             </content>

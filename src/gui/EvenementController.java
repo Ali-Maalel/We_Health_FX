@@ -91,6 +91,8 @@ public class EvenementController implements Initializable {
 
     private List<Evenement> evenements = new ArrayList<Evenement>();
     EvenementService es = new EvenementService();
+    private List<CategorieEvenement> Eventcategories = new ArrayList<CategorieEvenement>();
+
     @FXML
     private Label ctrllien;
     @FXML
@@ -101,7 +103,19 @@ public class EvenementController implements Initializable {
     private Label lblimgevent;
     @FXML
     private Label lblDateevent;
+    @FXML
     private ComboBox<CategorieEvenement> combocat;
+    @FXML
+    private TableView<?> tblcategorie;
+    @FXML
+    private TableColumn<?, ?> colnomcat;
+    @FXML
+    private TextField tfnomcat;
+    @FXML
+    private Button btnajoutcat;
+    @FXML
+    private Label ctrlnom;
+    CategorieEventService CS = new CategorieEventService(); 
 
     /**
      * Initializes the controller class.
@@ -109,7 +123,6 @@ public class EvenementController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
-            CategorieEventService CS = new CategorieEventService(); 
             ObservableList<CategorieEvenement> categorieObs = FXCollections.observableArrayList(CS.recuperer());
             combocat.setItems(categorieObs);
             
@@ -141,11 +154,15 @@ public class EvenementController implements Initializable {
     }
 
     @FXML
-    private void AjouterPhoto(ActionEvent event) {
+        private void AjouterPhoto(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Resource File");
         File file = fileChooser.showOpenDialog(new Stage());
         labelphoto.setText(file.toString());
+        String image = labelphoto.getText();
+        String newimageFile = image.replace("C:\\Users\\sarra\\OneDrive\\Documents\\NetBeansProjects\\wehealthapplication\\src\\images\\", "");
+
+            labelphoto.setText(newimageFile);
     }
 
     private void reset() {
@@ -302,6 +319,41 @@ public class EvenementController implements Initializable {
                 }
             }
         }
+    }
+
+    @FXML
+    private void AjouterCategorie(ActionEvent event) {
+         if (tfnomcat.getText().isEmpty()) {
+            ctrlnom.setText("champ vide");
+        }
+        else{ctrlnom.setText("");}
+        String nom = tfnomcat.getText();
+        if (!nom.isEmpty()) {
+            try {
+                 CategorieEvenement ce = new CategorieEvenement();
+                ce.setNom(tfnomcat.getText());
+                 CS.ajouter(ce);
+                reset();
+                Refresh();
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(EvenementController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            System.out.println("fill the name please");
+        }
+    }
+
+    @FXML
+    private void ViderChampCat(ActionEvent event) {
+    }
+
+    @FXML
+    private void SupprimerCat(ActionEvent event) {
+    }
+
+    @FXML
+    private void ModifierCat(ActionEvent event) {
     }
 
 }

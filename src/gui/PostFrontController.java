@@ -5,7 +5,10 @@
  */
 package gui;
 
+import entities.Evenement;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 
@@ -14,7 +17,7 @@ import javafx.fxml.Initializable;
  *
  * @author sarra
  */
-public class AccueilController implements Initializable {
+public class PostFrontController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -23,5 +26,5 @@ public class AccueilController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
+     
 }

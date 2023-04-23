@@ -14,7 +14,7 @@ import javafx.fxml.Initializable;
  *
  * @author sarra
  */
-public class AccueilController implements Initializable {
+public class MyEventsController implements Initializable {
 
     /**
      * Initializes the controller class.
