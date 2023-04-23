@@ -5,7 +5,10 @@
  */
 package gui;
 
+import entities.Evenement;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 
@@ -23,5 +26,5 @@ public class PostFrontController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
+     
 }

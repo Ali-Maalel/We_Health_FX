@@ -63,6 +63,30 @@
                   </AnchorPane>
             </content>
           </Tab>
+            <Tab text="Untitled Tab">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane layoutX="1.0" layoutY="-2.0" prefHeight="514.0" prefWidth="932.0">
+                           <children>
+                              <TableView fx:id="tblcategorie" prefHeight="226.0" prefWidth="932.0">
+                                <columns>
+                                  <TableColumn fx:id="colnomcat" prefWidth="75.0" text="Nom categorie" />
+                                </columns>
+                              </TableView>
+                              <Label layoutX="285.0" layoutY="269.0" text="Nom catégorie" />
+                              <TextField fx:id="tfnomcat" layoutX="382.0" layoutY="265.0" />
+                              <Label fx:id="ctrlnom" layoutX="382.0" layoutY="300.0" text="Label" />
+                           </children>
+                        </AnchorPane>
+                        <Button fx:id="btnajoutcat" layoutX="36.0" layoutY="276.0" mnemonicParsing="false" onAction="#AjouterCategorie" prefHeight="39.0" prefWidth="122.0" text="Ajouter" />
+                        <Button fx:id="btnvider" layoutX="36.0" layoutY="437.0" mnemonicParsing="false" onAction="#ViderChampCat" prefHeight="39.0" prefWidth="122.0" text="Vider les champs" />
+                        <Button fx:id="btnsupp" layoutX="36.0" layoutY="380.0" mnemonicParsing="false" onAction="#SupprimerCat" prefHeight="39.0" prefWidth="122.0" text="Supprimer" />
+                        <Button fx:id="btnmodif" layoutX="36.0" layoutY="328.0" mnemonicParsing="false" onAction="#ModifierCat" prefHeight="39.0" prefWidth="122.0" text="Modifier" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
         </tabs>
       </TabPane>
    </children>

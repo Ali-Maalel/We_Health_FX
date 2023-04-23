@@ -9,6 +9,8 @@ import entities.Evenement;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -17,10 +19,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import services.EvenementService;
+import utils.MyListener;
 
 /**
  * FXML Controller class
@@ -37,52 +39,60 @@ public class EventFrontController implements Initializable {
     private Button goarticle;
     @FXML
     private Button gomyevents;
+    EvenementService es = new EvenementService();
+    public static List<Evenement> eventList = new ArrayList<>();
+    public static List<Evenement> event = new ArrayList<>();
+        private MyListener myListener;
+
     @FXML
-    private FlowPane mesevents1;
-    @FXML
-    private VBox eventcontainer;
-    @FXML
-    private Button voirpls;
-EvenementService es = new EvenementService();
+    private HBox EventLayout;
+
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
- // Remplacez par l'instance de votre service EventService
-          // Appeler la méthode recuperer() pour récupérer les événements
-              List<Evenement> evenements = null;
         try {
-            evenements = es.recuperer(); // Récupération des événements depuis la classe GestionEvenements
-        } catch (SQLException ex) {
-            Logger.getLogger(TestController.class.getName()).log(Level.SEVERE, null, ex);
-        }
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("EventFront.fxml"));
-        VBox eventcontainer;
-        try {
-            eventcontainer = fxmlLoader.load();
+           eventList.addAll(es.recuperer());
+           Collections.reverse(eventList);
+
+           event.addAll(getData());
+            Collections.reverse(event);
+
+            for (int i = 0; i < eventList.size(); i++) {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("EventCard.fxml"));
+                VBox cardBox = fxmlLoader.load();
+
+                EventCardController eventcardcontroller = fxmlLoader.getController();
+                eventcardcontroller.setData(eventList.get(i),myListener);
+                
+                EventLayout.getChildren().add(cardBox);
+
+            }
+        
         } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        } catch (SQLException ex) {
             Logger.getLogger(EventFrontController.class.getName()).log(Level.SEVERE, null, ex);
         }
-      
-        // Parcourir la liste des événements et créer des VBox dupliqués pour chaque événement
-        for (Evenement event : evenements) {
-            VBox duplicatedVBox = new VBox();
-            //duplicatedVBox.getChildren().addAll(eventcontainer.getChildren());
-            //duplicatedVBox.getChildren().addAll(boxevent.getChildren());
+    }
 
-            // Créer des Labels pour afficher les informations de l'événement dans le VBox dupliqué
-            Label lblTitre = new Label(event.getTitre());
-    Label lblDescription = new Label(event.getDescription());
-   
+    public static List<Evenement> getData() {
+        List<Evenement> events = new ArrayList<>();
+        Evenement event;
 
-            // Ajouter les autres informations de l'événement à afficher dans les Labels
+        for (Evenement e : eventList) {
+            event = new Evenement();
+            event.setTitre(e.getTitre());
+            event.setPrix(e.getPrix());
+            event.setImage(e.getImage());
 
-            // Ajouter les Labels dans le VBox dupliqué
-            duplicatedVBox.getChildren().addAll(lblTitre, lblDescription);
-            // Ajouter le VBox dupliqué dans le FlowPane
-            mesevents1.getChildren().add(duplicatedVBox);
+            events.add(event);
         }
-    }
-    }
 
-   
+        return events;
+
+    }
+}
