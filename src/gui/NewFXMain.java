@@ -6,6 +6,7 @@
 package gui;
 
 import javafx.application.Application;
+import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,13 +14,13 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author sarra
+ * @author yasmi
  */
 public class NewFXMain extends Application {
     
    @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("EventFront.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
         Scene scene = new Scene(root); 
         primaryStage.setResizable(false);
         primaryStage.setTitle("WeHealth");
@@ -32,3 +33,4 @@ public class NewFXMain extends Application {
     }
     
 }
+

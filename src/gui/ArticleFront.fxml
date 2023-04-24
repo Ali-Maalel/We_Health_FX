@@ -1,34 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="536.0" prefWidth="764.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ArticleFrontController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: #F7F7F7;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ArticleFrontController">
    <children>
-      <Pane prefHeight="75.0" prefWidth="764.0" style="-fx-background-color: white;">
+      <Pane prefHeight="75.0" prefWidth="1100.0" style="-fx-background-color: white;">
          <children>
             <ImageView fitHeight="65.0" fitWidth="129.0" layoutX="30.0" layoutY="2.0" pickOnBounds="true">
                <image>
                   <Image url="@../images/applogo.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="31.0" fitWidth="21.0" layoutX="190.0" layoutY="22.0" pickOnBounds="true">
-               <image>
-                  <Image url="@../../../../../../Downloads/menu-burger.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="740.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="1065.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/exit.png" />
                </image>
             </ImageView>
-            <Pane layoutX="697.0" layoutY="31.0" prefHeight="39.0" prefWidth="43.0" styleClass="bouton" stylesheets="@style.css">
+            <Pane layoutX="1022.0" layoutY="34.0" prefHeight="39.0" prefWidth="43.0" styleClass="bouton" stylesheets="@style.css">
                <children>
                   <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="11.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -39,9 +38,9 @@
             </Pane>
          </children>
       </Pane>
-      <VBox layoutY="75.0" prefHeight="462.0" prefWidth="218.0" styleClass="side_ancherpane" stylesheets="@style.css">
+      <VBox layoutY="75.0" prefHeight="627.0" prefWidth="218.0" styleClass="side_ancherpane" stylesheets="@style.css">
          <children>
-            <Pane prefHeight="453.0" prefWidth="214.0">
+            <Pane prefHeight="489.0" prefWidth="214.0">
                <children>
                   <Button alignment="TOP_LEFT" layoutX="7.0" layoutY="126.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="200.0" styleClass="boutondown" stylesheets="@style.css" text=" Echanger" textFill="#d7d2d2">
                      <font>
@@ -107,6 +106,20 @@
             </Pane>
          </children>
       </VBox>
-      <ScrollBar layoutX="750.0" layoutY="93.0" orientation="VERTICAL" prefHeight="447.0" prefWidth="14.0" />
+      <ScrollPane layoutX="243.0" layoutY="184.0" prefHeight="489.0" prefWidth="836.0">
+         <padding>
+            <Insets left="5.0" top="10.0" />
+         </padding>
+         <content>
+            <GridPane fx:id="grid" prefWidth="804.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="250.0" minHeight="10.0" prefHeight="218.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+         </content>
+      </ScrollPane>
    </children>
 </AnchorPane>
