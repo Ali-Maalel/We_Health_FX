@@ -8,9 +8,14 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="lib\activation-1.1.jar" size="62983" download="eager" />
+    <jar href="lib\controlsfx-8.40.11.jar" size="985420" download="eager" />
+    <jar href="lib\itextpdf-5.1.0.jar" size="1614453" download="eager" />
+    <jar href="lib\javax.mail-1.6.2.jar" size="659031" download="eager" />
     <jar href="lib\jfoenix-8.0.10.jar" size="2710207" download="eager" />
     <jar href="lib\mysql-connector-java-5.1.23-bin.jar" size="834126" download="eager" />
-    <jar href="wehealthapplication.jar" size="3289266" download="eager" />
+    <jar href="lib\zxing.jar" size="191436" download="eager" />
+    <jar href="wehealthapplication.jar" size="3315539" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="wehealthapplication" >
     <param name="requiredFXVersion" value="8.0+"/>

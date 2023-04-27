@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
@@ -19,7 +20,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView fx:id="tblevent" onMouseClicked="#selectevent" prefHeight="240.0" prefWidth="932.0">
+                        <TableView fx:id="tblevent" onMouseClicked="#selectevent" prefHeight="240.0" prefWidth="486.0">
                           <columns>
                             <TableColumn fx:id="coltitre" prefWidth="129.0" text="Titre" />
                             <TableColumn fx:id="coldesc" prefWidth="109.0" text="Description" />
@@ -27,56 +28,59 @@
                               <TableColumn fx:id="coldatefin" minWidth="0.0" prefWidth="149.0" text="Date fin" />
                               <TableColumn fx:id="colmax" prefWidth="97.0" text="Max participant " />
                               <TableColumn fx:id="colprix" prefWidth="64.0" text="Prix" />
-                              <TableColumn fx:id="collien" prefWidth="237.0" text="Lien consultation" />
+                              <TableColumn fx:id="collien" prefWidth="130.0" text="Lien consultation" />
+                              <TableColumn fx:id="collcat" prefWidth="130.0" text="Categorie Evenement" />
                           </columns>
                         </TableView>
-                        <TextField fx:id="tftitre" layoutX="339.0" layoutY="254.0" />
-                        <Label layoutX="220.0" layoutY="359.0" prefHeight="22.0" prefWidth="98.0" text="Date début" />
-                        <Label layoutX="269.0" layoutY="258.0" prefHeight="22.0" prefWidth="41.0" text="Titre" />
-                        <Label layoutX="233.0" layoutY="294.0" prefHeight="22.0" prefWidth="100.0" text="Description" />
-                        <Label layoutX="202.0" layoutY="329.0" prefHeight="22.0" prefWidth="114.0" text="Lien de consultation" />
-                        <Label layoutX="504.0" layoutY="330.0" prefHeight="22.0" prefWidth="41.0" text="Image" />
-                        <Button fx:id="btnimport" layoutX="603.0" layoutY="329.0" mnemonicParsing="false" onAction="#AjouterPhoto" prefHeight="25.0" prefWidth="148.0" text="Importer" />
-                        <Button fx:id="btnajout" layoutX="26.0" layoutY="266.0" mnemonicParsing="false" onAction="#AjouterArticle" prefHeight="39.0" prefWidth="122.0" text="Ajouter" />
-                        <Button fx:id="btnvider" layoutX="26.0" layoutY="427.0" mnemonicParsing="false" onAction="#ViderChampsevent" prefHeight="39.0" prefWidth="122.0" text="Vider les champs" />
-                        <Button fx:id="btnsupp" layoutX="26.0" layoutY="370.0" mnemonicParsing="false" onAction="#SupprimerEvent" prefHeight="39.0" prefWidth="122.0" text="Supprimer" />
-                        <Button fx:id="btnmodif" layoutX="26.0" layoutY="318.0" mnemonicParsing="false" onAction="#ModifierEvent" prefHeight="39.0" prefWidth="122.0" text="Modifier" />
-                        <TextField fx:id="tfmax" layoutX="602.0" layoutY="293.0" />
-                        <TextField fx:id="tfliencons" layoutX="339.0" layoutY="339.0" />
-                        <TextField fx:id="tfdesc" layoutX="339.0" layoutY="293.0" />
-                        <TextField fx:id="tfprix" layoutX="602.0" layoutY="402.0" />
-                        <Label layoutX="220.0" layoutY="404.0" prefHeight="22.0" prefWidth="98.0" text="Date fin" />
-                        <Label layoutX="495.0" layoutY="295.0" prefHeight="22.0" prefWidth="98.0" text="Max participant" />
-                        <Label layoutX="524.0" layoutY="404.0" prefHeight="22.0" prefWidth="41.0" text="Prix" />
-                        <DatePicker fx:id="datedebut" layoutX="339.0" layoutY="383.0" prefHeight="25.0" prefWidth="150.0" />
-                        <DatePicker fx:id="datefin" layoutX="339.0" layoutY="416.0" prefHeight="25.0" prefWidth="151.0" />
+                        <TextField fx:id="tftitre" layoutX="133.0" layoutY="262.0" prefHeight="25.0" prefWidth="107.0" />
+                        <Label layoutX="32.0" layoutY="363.0" prefHeight="22.0" prefWidth="98.0" text="Date début" />
+                        <Label layoutX="81.0" layoutY="262.0" prefHeight="22.0" prefWidth="41.0" text="Titre" />
+                        <Label layoutX="45.0" layoutY="298.0" prefHeight="22.0" prefWidth="100.0" text="Description" />
+                        <Label layoutX="14.0" layoutY="333.0" prefHeight="22.0" prefWidth="114.0" text="Lien de consultation" />
+                        <Label layoutX="267.0" layoutY="342.0" prefHeight="22.0" prefWidth="41.0" text="Image" />
+                        <Button fx:id="btnimport" layoutX="350.0" layoutY="341.0" mnemonicParsing="false" onAction="#AjouterPhoto" prefHeight="25.0" prefWidth="148.0" text="Importer" />
+                        <Button fx:id="btnajout" layoutX="14.0" layoutY="461.0" mnemonicParsing="false" onAction="#AjouterArticle" prefHeight="39.0" prefWidth="73.0" text="Ajouter" />
+                        <Button fx:id="btnvider" layoutX="269.0" layoutY="461.0" mnemonicParsing="false" onAction="#ViderChampsevent" prefHeight="39.0" prefWidth="117.0" text="Vider les champs" />
+                        <Button fx:id="btnsupp" layoutX="181.0" layoutY="461.0" mnemonicParsing="false" onAction="#SupprimerEvent" prefHeight="39.0" prefWidth="79.0" text="Supprimer" />
+                        <Button fx:id="btnmodif" layoutX="95.0" layoutY="461.0" mnemonicParsing="false" onAction="#ModifierEvent" prefHeight="39.0" prefWidth="76.0" text="Modifier" />
+                        <TextField fx:id="tfmax" layoutX="350.0" layoutY="306.0" />
+                        <TextField fx:id="tfliencons" layoutX="134.0" layoutY="332.0" prefWidth="104.0" />
+                        <TextField fx:id="tfdesc" layoutX="133.0" layoutY="297.0" prefHeight="25.0" prefWidth="106.0" />
+                        <TextField fx:id="tfprix" layoutX="350.0" layoutY="378.0" />
+                        <Label layoutX="32.0" layoutY="396.0" prefHeight="22.0" prefWidth="98.0" text="Date fin" />
+                        <Label layoutX="258.0" layoutY="307.0" prefHeight="22.0" prefWidth="98.0" text="Max participant" />
+                        <Label layoutX="288.0" layoutY="380.0" prefHeight="22.0" prefWidth="41.0" text="Prix" />
+                        <DatePicker fx:id="datedebut" layoutX="134.0" layoutY="362.0" prefHeight="25.0" prefWidth="103.0" />
+                        <DatePicker fx:id="datefin" layoutX="134.0" layoutY="395.0" prefHeight="25.0" prefWidth="104.0" />
                         <Label fx:id="labelphoto" layoutX="603.0" layoutY="373.0" prefHeight="17.0" prefWidth="149.0" />
                         <Label fx:id="ctrltitre" layoutX="339.0" layoutY="277.0" prefHeight="17.0" prefWidth="148.0" />
-                        <Label fx:id="ctrldesc" layoutX="339.0" layoutY="320.0" prefHeight="17.0" prefWidth="148.0" />
+                        <Label fx:id="ctrldesc" layoutX="284.0" layoutY="321.0" prefHeight="17.0" prefWidth="148.0" />
                         <Label fx:id="ctrllien" layoutX="339.0" layoutY="365.0" prefHeight="17.0" prefWidth="150.0" />
                         <Label fx:id="lblidevent" layoutX="663.0" layoutY="258.0" visible="false" />
                         <Label fx:id="lblimgevent" layoutX="835.0" layoutY="333.0" visible="false" />
                         <Label fx:id="lblDateevent" layoutX="231.0" layoutY="433.0" />
-                        <ComboBox fx:id="combocat" layoutX="602.0" layoutY="254.0" prefWidth="150.0" />
-                        <Label layoutX="495.0" layoutY="258.0" text="Catégorie" />
+                        <ComboBox fx:id="combocat" layoutX="349.0" layoutY="266.0" prefWidth="150.0" />
+                        <Label layoutX="258.0" layoutY="270.0" text="Catégorie" />
+                        <PieChart fx:id="eventsChart" layoutX="512.0" prefHeight="507.0" prefWidth="415.0" />
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
-            <Tab text="Untitled Tab">
+            <Tab text="Categorie">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <AnchorPane layoutX="1.0" layoutY="-2.0" prefHeight="514.0" prefWidth="932.0">
                            <children>
-                              <TableView fx:id="tblcategorie" prefHeight="226.0" prefWidth="932.0">
+                              <TableView fx:id="tblcategorie" onMouseClicked="#selectCat" prefHeight="226.0" prefWidth="932.0">
                                 <columns>
-                                  <TableColumn fx:id="colnomcat" prefWidth="75.0" text="Nom categorie" />
+                                  <TableColumn fx:id="colnomcat" prefWidth="119.0" text="Nom categorie" />
                                 </columns>
                               </TableView>
                               <Label layoutX="285.0" layoutY="269.0" text="Nom catégorie" />
                               <TextField fx:id="tfnomcat" layoutX="382.0" layoutY="265.0" />
                               <Label fx:id="ctrlnom" layoutX="382.0" layoutY="300.0" text="Label" />
+                              <Label fx:id="lblidcat" disable="true" layoutX="404.0" layoutY="226.0" />
                            </children>
                         </AnchorPane>
                         <Button fx:id="btnajoutcat" layoutX="36.0" layoutY="276.0" mnemonicParsing="false" onAction="#AjouterCategorie" prefHeight="39.0" prefWidth="122.0" text="Ajouter" />
@@ -85,6 +89,11 @@
                         <Button fx:id="btnmodif" layoutX="36.0" layoutY="328.0" mnemonicParsing="false" onAction="#ModifierCat" prefHeight="39.0" prefWidth="122.0" text="Modifier" />
                      </children>
                   </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Statistiques">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
               </content>
             </Tab>
         </tabs>

@@ -26,6 +26,41 @@ public class Evenement {
     private int prix;
     private List<User> participants;
     private CategorieEvenement categorie;
+    
+    public Evenement(String titre, String description, String consultationurl, Date date_debut, Date date_fin, boolean all_day, int reservations, int max, String image, int prix, List<User> participants, CategorieEvenement categorie, String catName) {
+        this.titre = titre;
+        this.description = description;
+        this.consultationurl = consultationurl;
+        this.date_debut = date_debut;
+        this.date_fin = date_fin;
+        this.all_day = all_day;
+        this.reservations = reservations;
+        this.max = max;
+        this.image = image;
+        this.prix = prix;
+        this.participants = participants;
+        this.categorie = categorie;
+    }
+    
+
+    public Evenement(int id, String titre, String description, String consultationurl, Date date_debut, Date date_fin, boolean all_day, int reservations, int max, String image, int prix, List<User> participants, CategorieEvenement categorie, String catName) {
+        this.id = id;
+        this.titre = titre;
+        this.description = description;
+        this.consultationurl = consultationurl;
+        this.date_debut = date_debut;
+        this.date_fin = date_fin;
+        this.all_day = all_day;
+        this.reservations = reservations;
+        this.max = max;
+        this.image = image;
+        this.prix = prix;
+        this.participants = participants;
+        this.categorie = categorie;
+    }
+    
+    
+    
     public Evenement() {
     }
 

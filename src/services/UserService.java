@@ -28,10 +28,10 @@ public class UserService {
     }
 
     public List<User> recupererById(int id) throws SQLException {
-        String req = "select * from User where id=?";
+        String req = "select * from User where id=" + id;
         PreparedStatement st = cnx.prepareCall(req);
-        st.setInt(1, id);
-        List users = new ArrayList<User>();
+        //st.setInt(1, id);
+        List<User> users = new ArrayList<>();
         ResultSet rs = st.executeQuery(req);
         while (rs.next()) {
             User u = new User();

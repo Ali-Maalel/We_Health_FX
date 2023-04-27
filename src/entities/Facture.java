@@ -23,8 +23,20 @@ public class Facture {
     public Facture() {
     }
 
+    @Override
+    public String toString() {
+        return "Facture{" + "id=" + id + ", created_at=" + created_at + ", prix=" + prix + ", num=" + num + ", user=" + user + ", evenements=" + evenements + '}';
+    }
+
     public Facture(int id, Date created_at, int prix, int num, User user_id) {
         this.id = id;
+        this.created_at = created_at;
+        this.prix = prix;
+        this.num = num;
+        this.user = user_id;
+    }
+    
+    public Facture(Date created_at, int prix, int num, User user_id) {
         this.created_at = created_at;
         this.prix = prix;
         this.num = num;

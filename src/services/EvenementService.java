@@ -5,6 +5,7 @@
  */
 package services;
 
+import entities.CategorieEvenement;
 import entities.User;
 import entities.Evenement;
 import java.sql.Connection;
@@ -50,7 +51,7 @@ public class EvenementService implements IServices<Evenement> {
 
     @Override
     public void modifier(Evenement t) throws SQLException {
-        String req = "update evennement set titre = ?, description = ?, consultationurl = ?, date_debut = ?, date_fin = ?, all_day=?,max=?,image=?,prix=?,categorie_evenement_id=? where id = ?";
+        String req = "update evennement set titre = ?, description = ?, consultationurl = ?, date_debut = ?, date_fin = ?, all_day=?,max=?,image=?,prix=?,categorie_evenement_id=?,reservations=? where id = ?";
         PreparedStatement ps = cnx.prepareStatement(req);
         ps.setString(1, t.getTitre());
         ps.setString(2, t.getDescription());
@@ -61,8 +62,9 @@ public class EvenementService implements IServices<Evenement> {
         ps.setInt(7, t.getMax());
         ps.setString(8, t.getImage());
         ps.setInt(9, t.getPrix());
-        ps.setInt(10, t.getId());
-        ps.setInt(11, t.getCategorie().getId());
+        ps.setInt(10, t.getCategorie().getId());
+        ps.setInt(11, t.getReservations());
+        ps.setInt(12, t.getId());
         ps.executeUpdate();
 
     }
@@ -85,6 +87,7 @@ public class EvenementService implements IServices<Evenement> {
     @Override
     public List<Evenement> recuperer() throws SQLException {
         List<Evenement> events = new ArrayList<>();
+        CategorieEventService catsr = new CategorieEventService();
         String s = "select * from evennement";
         Statement st = cnx.createStatement();
         ResultSet rs = st.executeQuery(s);
@@ -101,6 +104,9 @@ public class EvenementService implements IServices<Evenement> {
             r.setMax(rs.getInt("max"));
             r.setImage(rs.getString("image"));
             r.setPrix(rs.getInt("prix"));
+            r.setCategorie(catsr.recupererById(
+                    new CategorieEvenement(rs.getInt("categorie_evenement_id"))
+            ).get(0));
 
             events.add(r);
 
@@ -126,7 +132,7 @@ public class EvenementService implements IServices<Evenement> {
             e.setMax(rs.getInt("max"));
             e.setImage(rs.getString("image"));
             e.setPrix(rs.getInt("prix"));
-           
+
             events.add(e);
         }
         return events;
@@ -139,11 +145,36 @@ public class EvenementService implements IServices<Evenement> {
         st.setInt(1, id);
         ResultSet rs = st.executeQuery();
         UserService us = new UserService();
-        while(rs.next()){
-           int user_id= rs.getInt("user_id");
-           User u = us.recupererById(user_id).get(0);
-           participants.add(u);
+        while (rs.next()) {
+            int user_id = rs.getInt("user_id");
+            User u = us.recupererById(user_id).get(0);
+            participants.add(u);
         }
         return participants;
+    }
+     public List<Evenement> recupererByCategorie(CategorieEvenement t) throws SQLException {
+        CategorieEventService catsr = new CategorieEventService();
+        List<Evenement> articles = new ArrayList<>();
+        String req = "SELECT * FROM evennement where categorie_evenement_id = ? ";
+        PreparedStatement st = cnx.prepareStatement(req);
+        st.setInt(1, t.getId());
+        ResultSet rs = st.executeQuery();
+        while (rs.next()) {
+            Evenement e = new Evenement();
+             e.setId(rs.getInt("id"));
+            e.setTitre(rs.getString("titre"));
+            e.setDescription(rs.getString("description"));
+            e.setDate_debut(rs.getDate("date_debut"));
+            e.setDate_fin(rs.getDate("date_fin"));
+            e.setAll_day(rs.getBoolean("all_day"));
+            e.setReservations(rs.getInt("reservations"));
+            e.setMax(rs.getInt("max"));
+            e.setImage(rs.getString("image"));
+            e.setPrix(rs.getInt("prix"));
+            e.setCategorie(t);
+            articles.add(e);
+        }
+        return articles;
+
     }
 }

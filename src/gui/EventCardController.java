@@ -6,19 +6,25 @@
 package gui;
 
 import entities.Evenement;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import services.EvenementService;
 import utils.MyListener;
 
@@ -66,8 +72,10 @@ public class EventCardController implements Initializable {
     public void setData(Evenement e, MyListener myListener) {
         this.e = e;
         this.myListener = myListener;
-        eventtitle.setText(e.getTitre());
-        eventdate.setText(" Le" + e.getDate_debut());
+        eventtitle.setText(" " + e.getTitre());
+        eventdate.setText(" Date: " + e.getDate_debut());
+        eventprice.setText(" Prix: " + e.getPrix() + "TND");
+        eventdetails.setText(" " + e.getDescription());
         Image myImage = new Image(getClass().getResourceAsStream("/images/" + e.getImage() + ""));
         eventimg.setImage(myImage);
         /*Image image = new Image(getClass().getResourceAsStream(e.getImage() + ""));
@@ -76,5 +84,17 @@ public class EventCardController implements Initializable {
 
     @FXML
     private void participer(ActionEvent event) {
+        try {
+            URL fxURL = getClass().getResource("detailsEvent.fxml");
+            FXMLLoader loader = new FXMLLoader(fxURL);
+            Parent root = loader.load();
+            DetailsController dc = loader.getController();
+            dc.setData(e, myListener);
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 }

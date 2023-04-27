@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="424.0" prefWidth="623.0" style="-fx-background-color: #F39DDC;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.DetailsController">
+   <children>
+      <ImageView fx:id="lblImage" fitHeight="152.0" fitWidth="175.0" layoutX="6.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="lblTitle" layoutX="202.0" layoutY="7.0" prefHeight="57.0" prefWidth="306.0" text="Titre">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDesc" layoutX="197.0" layoutY="216.0" prefHeight="78.0" prefWidth="343.0" text="Description" />
+      <Label fx:id="lblDate" layoutX="197.0" layoutY="52.0" prefHeight="71.0" prefWidth="416.0" text="Date de l'évènement">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnReserver" layoutX="314.0" layoutY="367.0" mnemonicParsing="false" onAction="#reserverEvent" prefHeight="39.0" prefWidth="215.0" style="-fx-background-color: blue;" text="Réserver" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="lblPrice" layoutX="197.0" layoutY="103.0" prefHeight="78.0" prefWidth="215.0" text="Prix" />
+      <Label fx:id="lblNbPlaceRes" layoutX="197.0" layoutY="158.0" prefHeight="78.0" prefWidth="215.0" text="Nombre de place restantes " />
+      <Button fx:id="cancelBtn" layoutX="91.0" layoutY="367.0" mnemonicParsing="false" onAction="#cancel" prefHeight="39.0" prefWidth="215.0" style="-fx-background-color: blue;" text="Annuler" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
