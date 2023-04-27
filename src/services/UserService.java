@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import utils.MYDB;
@@ -28,10 +29,10 @@ public class UserService {
     }
 
     public List<User> recupererById(int id) throws SQLException {
-        String req = "select * from User where id=?";
-        PreparedStatement st = cnx.prepareCall(req);
-        st.setInt(1, id);
         List users = new ArrayList<User>();
+        System.out.println( "user:"+id);
+        String req = "select * from User where id = "+id;
+        Statement st = cnx.createStatement();
         ResultSet rs = st.executeQuery(req);
         while (rs.next()) {
             User u = new User();

@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="847.0" prefWidth="1200.0" style="-fx-background-color: white;" stylesheets="@navsidebar.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.DetailArticleController">
+   <children>
+      <BorderPane layoutX="364.0" layoutY="149.0" prefHeight="922.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <Pane prefHeight="715.0" prefWidth="237.0" style="-fx-background-color: #5271FF; -fx-background-radius: 0 90 0 0;" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER" layoutX="13.0" layoutY="32.0" prefHeight="636.0" prefWidth="211.0" spacing="30.0">
+                     <children>
+                        <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="285.0" styleClass="buttonFront" stylesheets="@navsidebar.css" text="   Accueil">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="30.0" />
+                           </font>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                           <graphic>
+                              <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/home%20(3).png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="241.0" styleClass="buttonFront">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="282.0" styleClass="buttonFront" text="   Echanger">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="18.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="38.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/users-alt.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Button>
+                        <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="292.0" styleClass="buttonFront" text="   Evènement">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="18.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="36.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/calendar.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="350.0" styleClass="buttonFront" text="   M'informer">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="18.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="37.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/document.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="304.0" styleClass="buttonFront" text="   Mes réeservations">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="18.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="34.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/shopping-bag.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="exit" mnemonicParsing="false" onAction="#handleQuitter" prefHeight="58.0" prefWidth="70.0" styleClass="buttonFront">
+                           <graphic>
+                              <ImageView fitHeight="48.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icons8-logout-rounded-left-50%20(1).png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </Pane>
+         </left>
+         <top>
+            <Pane prefHeight="123.0" prefWidth="1200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER" />
+         </top>
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <top>
+                  <Pane prefHeight="121.0" prefWidth="963.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label layoutX="14.0" layoutY="61.0" prefHeight="46.0" prefWidth="256.0" text="Détail d'article">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="40.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="returnP" layoutX="889.0" layoutY="63.0" mnemonicParsing="false" onAction="#retourBlog" styleClass="buttonNext">
+                           <graphic>
+                              <ImageView fitHeight="41.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icons8-left-67.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </Pane>
+               </top>
+               <center>
+                  <AnchorPane fx:id="AA" prefHeight="561.0" prefWidth="963.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox fx:id="VV" layoutX="14.0" prefHeight="463.0" prefWidth="447.0" spacing="10.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <BorderPane fx:id="PP" prefHeight="427.0" prefWidth="447.0" style="-fx-border-color: #DCDCDC; -fx-border-radius: 10; -fx-background-color: white; -fx-background-radius: 10;">
+                                 <top>
+                                    <Pane prefHeight="92.0" prefWidth="659.0" style="-fx-border-color: #5271FF; -fx-background-color: #5271FF;" BorderPane.alignment="CENTER">
+                                       <children>
+                                         <Button fx:id="titleeP" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="48.0" prefWidth="263.0" styleClass="buttonFront" text="Article titre">
+                                             <font>
+                                                <Font name="Calibri Bold Italic" size="25.0" />
+                                             </font>
+                                          </Button>
+                                          <Label layoutX="270.0" layoutY="24.0" prefHeight="44.0" prefWidth="125.0" text="Post Owner" textFill="WHITE">
+                                             <font>
+                                                <Font name="Calibri Bold Italic" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <ImageView fitHeight="53.0" fitWidth="78.0" layoutX="377.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/author.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </Pane>
+                                 </top>
+                                 <bottom>
+                                    <Pane prefHeight="116.0" prefWidth="445.0" style="-fx-border-color: #DCDCDC;" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label fx:id="dateP" layoutX="14.0" layoutY="14.0" prefHeight="23.0" prefWidth="279.0" text="Article date">
+                                             <font>
+                                                <Font name="Calibri Bold Italic" size="20.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="10.0" />
+                                             </padding>
+                                          </Label>
+                                          <Label fx:id="descP" alignment="TOP_LEFT" layoutX="1.0" layoutY="50.0" prefHeight="64.0" prefWidth="444.0" style="-fx-border-color: #DCDCDC; -fx-border-width: 1 0 0 0;" text="Article description" textAlignment="CENTER">
+                                             <font>
+                                                <Font name="Calibri Italic" size="20.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="10.0" top="10.0" />
+                                             </padding>
+                                          </Label>
+                                
+                                          <Button fx:id="pdf" layoutX="340.0" layoutY="58.0" mnemonicParsing="false" onAction="#generateePDF" styleClass="buttonNext" text="PDF">
+                                             <font>
+                                                <Font name="Calibri Bold Italic" size="20.0" />
+                                             </font>
+                                             <graphic>
+                                                <ImageView fitHeight="33.0" fitWidth="28.0" onMouseClicked="#generateePDF" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/icons8-pdf-100.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                    </Pane>
+                                 </bottom>
+                                 <effect>
+                                    <DropShadow>
+                                       <input>
+                                          <InnerShadow />
+                                       </input>
+                                    </DropShadow>
+                                 </effect>
+                                 <center>
+                                    <ImageView fx:id="PicP" fitHeight="189.0" fitWidth="403.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                                       <image>
+                                          <Image url="@../images/32d58670c3f402e464f334fd9c77277b.jpg" />
+                                       </image>
+                                    </ImageView>
+                                 </center>
+                              </BorderPane>
+                              <HBox alignment="CENTER_LEFT" prefHeight="64.0" prefWidth="453.0">
+                                 <children>
+                                    <Button fx:id="clear" mnemonicParsing="false" onAction="#clearValue" prefHeight="44.0" prefWidth="29.0" styleClass="buttonNext">
+                                       <graphic>
+                                          <ImageView fitHeight="24.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/icons8-close-30.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="Calibri Bold Italic" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="val1" mnemonicParsing="false" onAction="#val1" prefHeight="25.0" prefWidth="26.0" styleClass="star" text="1">
+                                       <graphic>
+                                          <ImageView fitHeight="34.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/icons8-star-filled-64.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="Calibri Bold Italic" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="val2" layoutX="10.0" layoutY="38.0" mnemonicParsing="false" onAction="#val2" prefHeight="25.0" prefWidth="26.0" styleClass="star" text="2">
+                                       <graphic>
+                                          <ImageView fitHeight="34.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/icons8-star-filled-64.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="Calibri Bold Italic" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="val3" layoutX="76.0" layoutY="38.0" mnemonicParsing="false" onAction="#val3" prefHeight="25.0" prefWidth="26.0" styleClass="star" text="3">
+                                       <graphic>
+                                          <ImageView fitHeight="34.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/icons8-star-filled-64.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="Calibri Bold Italic" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="val4" layoutX="142.0" layoutY="38.0" mnemonicParsing="false" onAction="#val4" prefHeight="25.0" prefWidth="26.0" styleClass="star" text="4">
+                                       <graphic>
+                                          <ImageView fitHeight="34.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/icons8-star-filled-64.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="Calibri Bold Italic" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="val5" layoutX="208.0" layoutY="38.0" mnemonicParsing="false" onAction="#val5" prefHeight="25.0" prefWidth="26.0" styleClass="star" text="5">
+                                       <graphic>
+                                          <ImageView fitHeight="34.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/icons8-star-filled-64.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="Calibri Bold Italic" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Label fx:id="rateP" alignment="CENTER" prefHeight="23.0" prefWidth="115.0" text="Rate value" textAlignment="JUSTIFY">
+                                       <font>
+                                          <Font name="Calibri Italic" size="20.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets top="20.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox fx:id="ContainerVBox" prefHeight="482.0" prefWidth="469.0" style="-fx-background-color: white; -fx-border-radius: 10; -fx-background-radius: 10; -fx-border-color: #DCDCDC;" AnchorPane.bottomAnchor="121.0" AnchorPane.leftAnchor="480.0" AnchorPane.topAnchor="0.0">
+                           <effect>
+                              <DropShadow>
+                                 <input>
+                                    <InnerShadow />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                           <children>
+                              <Pane minHeight="92.0" prefHeight="107.0" prefWidth="476.0" style="-fx-background-color: #5271FF; -fx-background-radius: 10 0 0 0;">
+                                 <children>
+                                    <Button layoutY="14.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="177.0" styleClass="buttonFront" text="Comments:">
+                                       <font>
+                                          <Font name="Calibri Bold Italic" size="25.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
+                              <ScrollPane fx:id="scrollCom" hbarPolicy="NEVER" hmax="0.0" prefHeight="325.0" prefWidth="467.0" VBox.vgrow="ALWAYS">
+                                 <content>
+                                    <VBox fx:id="VBoxCom" minHeight="452.0" minWidth="477.0" spacing="10.0" style="-fx-background-color: white;">
+                                       <padding>
+                                          <Insets bottom="20.0" top="20.0" />
+                                       </padding>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
+                              <HBox alignment="CENTER" prefHeight="217.0" prefWidth="467.0">
+                                 <children>
+                                    <TextArea fx:id="tfCom" prefHeight="112.0" prefWidth="370.0" promptText="Comment here.." styleClass="text-field">
+                                       <opaqueInsets>
+                                          <Insets bottom="2.0" />
+                                       </opaqueInsets>
+                                       <padding>
+                                          <Insets bottom="10.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" />
+                                       </HBox.margin>
+                                    </TextArea>
+                                    <VBox alignment="TOP_CENTER" prefHeight="82.0" prefWidth="48.0">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <children>
+                                          <Button fx:id="ajoutCom" alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#newComment" prefHeight="17.0" prefWidth="19.0" styleClass="buttonNext">
+                                             <graphic>
+                                                <ImageView fitHeight="31.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/icons8-plus-math-64.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button fx:id="AnnulerCom" alignment="BOTTOM_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#annulerC" prefHeight="13.0" prefWidth="14.0" styleClass="buttonNext">
+                                             <graphic>
+                                                <ImageView fitHeight="24.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/icons8-close-30.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <VBox.margin>
+                                                <Insets top="35.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="10.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </center>
+      </BorderPane>
+      <Label prefHeight="44.0" prefWidth="163.0" text="User Name" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="40.0">
+         <font>
+            <Font name="Calibri Bold Italic" size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="84.0" fitWidth="142.0" layoutX="1046.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="18.0">
+         <image>
+            <Image url="@../images/applogo.png" />
+         </image>
+         <effect>
+            <Glow level="0.5" />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="53.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="30.0">
+         <image>
+            <Image url="@../images/author.png" />
+         </image>
+      </ImageView>
+      <Label prefHeight="25.0" prefWidth="801.0" style="-fx-border-color: #5271FF; -fx-border-width: 0 0 4 0;" AnchorPane.leftAnchor="240.0" AnchorPane.rightAnchor="159.0" AnchorPane.topAnchor="43.0" />
+   </children>
+   <effect>
+      <DropShadow>
+         <input>
+            <InnerShadow />
+         </input>
+      </DropShadow>
+   </effect>
+</AnchorPane>

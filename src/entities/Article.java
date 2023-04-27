@@ -8,7 +8,6 @@ package entities;
 import java.sql.Date;
 import java.util.List;
 
-
 public class Article {
 
     private int id;
@@ -21,6 +20,33 @@ public class Article {
     private Num_media num_media;
     private List<User> likes;
     private List<Comment> comments;
+
+    private int rate;
+    private double nbrRate;
+
+    public int getRate() {
+        return rate;
+    }
+
+    public void setRate(int rate) {
+        this.rate = rate;
+    }
+
+    public double getNbrRate() {
+        return nbrRate;
+    }
+
+    public void setNbrRate(double nbrRate) {
+        this.nbrRate = nbrRate;
+    }
+
+    @Override
+    public String toString() {
+        return "Article{" + "id=" + id + ", Titre=" + Titre + ", Contenu=" + Contenu + ", featured_text=" + featured_text + ", created_at=" + created_at + ", updated_at=" + updated_at + ", categorie=" + categorie + ", num_media=" + num_media + ", likes=" + likes + ", comments=" + comments + ", rate=" + rate + ", nbrRate=" + nbrRate + '}';
+    }
+
+
+
     public Article() {
     }
 
@@ -32,8 +58,9 @@ public class Article {
         this.updated_at = updated_at;
         this.categorie = categorie;
         this.num_media = num_media;
+
     }
-    
+
     public Article(int id, String Titre, String Contenu, String featured_text, Date created_at, Date updated_at, Categorie categorie, Num_media num_media, List<User> likes, List<Comment> comments) {
         this.id = id;
         this.Titre = Titre;
@@ -57,11 +84,10 @@ public class Article {
         this.categorie = categorie;
         this.num_media = num_media;
     }
-
+    
     public Article(int id) {
         this.id = id;
     }
-
 
     public int getId() {
         return id;
@@ -142,7 +168,5 @@ public class Article {
     public void setComments(List<Comment> comments) {
         this.comments = comments;
     }
-    
 
 }
-

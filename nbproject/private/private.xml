@@ -3,38 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/src/gui/style.css</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/src/gui/homewehealth.fxml</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/src/gui/Evenement.fxml</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/src/gui/NewFXMain.java</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/src/wehealthapplication/Wehealthapplication.java</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/style.css</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/src/gui/PostFrontController.java</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/src/gui/EventCardController.java</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/src/gui/ArticleFront.fxml</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/src/gui/TestController.java</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/src/gui/EventFront.fxml</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/src/utils/MYDB.java</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/src/gui/PostsFront.fxml</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/src/gui/EvenementController.java</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/src/gui/AccueilController.java</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/src/utils/MyListener.java</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/src/gui/EventCard.fxml</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/src/services/FactureService.java</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/src/gui/test.fxml</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/src/gui/MyEvents.fxml</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/src/services/IServices.java</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/src/gui/Accueil.fxml</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/src/gui/MyEventsController.java</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/nbproject/build-impl.xml</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/src/services/EvenementService.java</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/src/services/CategorieEventService.java</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/src/entities/CategorieEvenement.java</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/src/gui/EventFrontController.java</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/src/entities/participants.java</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/src/entities/Evenement.java</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/src/gui/Eventcategorie.fxml</file>
-            <file>file:/C:/Users/sarra/OneDrive/Documents/NetBeansProjects/wehealthapplication/src/entities/User.java</file>
+            <file>file:/C:/Users/yasmi/Desktop/pidevFX/We_Health_FX/src/gui/HomePageController.java</file>
+            <file>file:/C:/Users/yasmi/Desktop/pidevFX/We_Health_FX/src/services/ArticleService.java</file>
+            <file>file:/C:/Users/yasmi/Desktop/pidevFX/We_Health_FX/src/gui/NewFXMain.java</file>
+            <file>file:/C:/Users/yasmi/Desktop/pidevFX/We_Health_FX/src/gui/DetailArticleController.java</file>
         </group>
     </open-files>
 </project-private>

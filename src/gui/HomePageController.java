@@ -55,9 +55,10 @@ public class HomePageController implements Initializable {
     private void GoUser(ActionEvent event) {
         try {
             //navigation
-            Parent loader = FXMLLoader.load(getClass().getResource("ArticleFront.fxml"));
-             btnuser.getScene().getWindow().setHeight(740);
-             btnuser.getScene().getWindow().setWidth(1110);
+            Parent loader = FXMLLoader.load(getClass().getResource("ShowArticleFront.fxml"));
+            
+             btnuser.getScene().getWindow().setHeight(950);
+             btnuser.getScene().getWindow().setWidth(1200);
             btnuser.getScene().setRoot(loader);
         } catch (IOException ex) {
             System.out.println(ex.getMessage());

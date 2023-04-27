@@ -22,7 +22,7 @@ public class NewFXMain extends Application {
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
         Scene scene = new Scene(root); 
-        primaryStage.setResizable(false);
+
         primaryStage.setTitle("WeHealth");
         primaryStage.setScene(scene);
         primaryStage.show();

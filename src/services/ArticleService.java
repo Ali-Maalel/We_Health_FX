@@ -7,6 +7,7 @@ package services;
 
 import entities.Article;
 import entities.Categorie;
+import entities.Comment;
 import entities.Num_media;
 import entities.User;
 import java.sql.Connection;
@@ -32,7 +33,7 @@ public class ArticleService implements IService<Article> {
 
     @Override
     public Article ajouter(Article t) throws SQLException {
-        String req = "insert into Article (Titre,featured_text,Contenu,created_at,updated_at,categorie_id,featured_image_id) values('" + t.getTitre() + "','" + t.getFeatured_text() + "','" + t.getContenu() + "','" + t.getCreated_at() + "','" + t.getUpdated_at() + "','" + t.getCategorie().getId() + "','" + t.getNum_media().getId() + "')";
+        String req = "insert into Article (Titre,featured_text,Contenu,created_at,updated_at,categorie_id,featured_image_id,image,rate,moy_rate) values('" + t.getTitre() + "','" + t.getFeatured_text() + "','" + t.getContenu() + "','" + t.getCreated_at() + "','" + t.getUpdated_at() + "','" + t.getCategorie().getId() + "','" + t.getNum_media().getId() + "','" + t.getNum_media().getNom_fichier().replace("\\", "\\\\")+"',0,0)";
         Statement st = cnx.createStatement();
         int affectedRows = st.executeUpdate(req, st.RETURN_GENERATED_KEYS);
         if (affectedRows == 0) {
@@ -52,7 +53,7 @@ public class ArticleService implements IService<Article> {
     @Override
     public void modifier(Article t) throws SQLException {
         Num_mediaService num_mediaService =new Num_mediaService();
-        String req = "update article set Titre = ? , featured_text = ? , Contenu = ? , created_at = ? , updated_at = ? , categorie_id = ? , featured_image_id = ? where id = ?";
+        String req = "update article set Titre = ? , featured_text = ? , Contenu = ? , created_at = ? , updated_at = ? , categorie_id = ? , featured_image_id = ? , rate = ?  , moy_rate = ? where id = ?";
         PreparedStatement ps = cnx.prepareStatement(req);
         num_mediaService.modifier(t.getNum_media());
         ps.setString(1, t.getTitre());
@@ -62,7 +63,10 @@ public class ArticleService implements IService<Article> {
         ps.setDate(5, t.getUpdated_at());
         ps.setInt(6, t.getCategorie().getId());
         ps.setInt(7, t.getNum_media().getId());
-        ps.setInt(8, t.getId());
+        ps.setInt(8, t.getRate());
+        ps.setDouble(9, t.getNbrRate());
+        ps.setInt(10, t.getId());
+        
         ps.executeUpdate();
     }
 
@@ -97,6 +101,8 @@ public class ArticleService implements IService<Article> {
                     rs.getInt("featured_image_id")
             ).get(0));
             p.setLikes(this.recupererlikes(p.getId()));
+            p.setRate(rs.getInt("rate"));
+            p.setNbrRate(rs.getDouble("moy_rate"));
             articles.add(p);
         }
         return articles;
@@ -126,6 +132,8 @@ public class ArticleService implements IService<Article> {
                     rs.getInt("featured_image_id")
             ).get(0));
             p.setLikes(this.recupererlikes(p.getId()));
+            p.setRate(rs.getInt("rate"));
+            p.setNbrRate(rs.getDouble("moy_rate"));
             articles.add(p);
         }
         return articles;
@@ -152,6 +160,8 @@ public class ArticleService implements IService<Article> {
                     rs.getInt("featured_image_id")
             ).get(0));
             p.setLikes(this.recupererlikes(p.getId()));
+            p.setRate(rs.getInt("rate"));
+            p.setNbrRate(rs.getDouble("moy_rate"));
             articles.add(p);
         }
         return articles;
@@ -171,5 +181,25 @@ public class ArticleService implements IService<Article> {
             users.add(user);
         }
         return users;
+    }
+    public List<Comment> showComments(Article t) throws SQLException {
+        List<Comment> Comments = new ArrayList<>();
+        ArticleService serviceart = new ArticleService();
+        UserService service = new UserService();
+        String req = "SELECT * FROM Comment where article_id = ? ";
+        PreparedStatement st = cnx.prepareStatement(req);
+        System.out.println(t);
+        st.setInt(1, t.getId());
+        ResultSet rs = st.executeQuery();
+        while (rs.next()) {
+            System.out.println("showComments : "+rs.getInt("user_id"));
+            int id = rs.getInt("user_id");
+            
+            User user = service.recupererById(id).get(0);
+            System.out.println("showComments : "+user.toString());
+            Comment c = new Comment(rs.getInt("id"), t, user, rs.getString("contenu"), rs.getDate("created_at"));
+            Comments.add(c);
+        }
+        return Comments;
     }
 }

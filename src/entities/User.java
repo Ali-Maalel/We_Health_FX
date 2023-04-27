@@ -20,6 +20,11 @@ public class User {
     private int blocked;
     private String typeuser;
     private String email;
+
+    @Override
+    public String toString() {
+        return "User{" + "id=" + id + ", login=" + login + ", roles=" + roles + ", password=" + password + ", nom=" + nom + ", prenom=" + prenom + ", telephone=" + telephone + ", blocked=" + blocked + ", typeuser=" + typeuser + ", email=" + email + '}';
+    }
     
 
     public User() {
@@ -49,6 +54,10 @@ public class User {
         this.blocked = blocked;
         this.typeuser = typeuser;
         this.email = email;
+    }
+
+    public User(int aInt) {
+        this.id=aInt;
     }
 
     public int getId() {
